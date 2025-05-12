@@ -35,8 +35,7 @@ Baixe o Java aqui
 Clone o repositório:
 
 bash
-Copiar
-Editar
+
 git clone https://github.com/seu-usuario/GitHubInspector.git
 Importe o projeto na sua IDE: Abra o projeto em sua IDE favorita (IntelliJ IDEA, Eclipse, etc.).
 
@@ -90,19 +89,7 @@ Editar
 📂 Estrutura de Pastas
 A estrutura do projeto é a seguinte:
 
-bash
-Copiar
-Editar
-GitHubInspector/
-├── src/
-│   └── br/
-│       └── com/
-│           └── githubinspector/
-│               ├── ConsultaGitHub.java
-│               ├── ErroConsultaGitHubException.java
-│               └── UsuarioGitHub.java
-├── pom.xml (caso esteja usando Maven)
-└── README.md
+
 ⚙️ Tratamento de Erros
 A aplicação conta com tratamento de erros para cenários como:
 
