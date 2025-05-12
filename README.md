@@ -1,38 +1,48 @@
 GitHubInspector
-GitHubInspector é uma ferramenta simples para consultar informações sobre usuários no GitHub utilizando a API pública do GitHub. Ao fornecer o nome de usuário, o sistema retorna detalhes como nome, login, biografia, número de repositórios públicos e localização do usuário.
+
+GitHubInspector é uma ferramenta desenvolvida em Java para consultar informações sobre usuários no GitHub através da API pública. Com ela, você pode buscar detalhes como nome, login, bio, repositórios públicos, localização e acessar o perfil do usuário diretamente no GitHub.
 
 🚀 Funcionalidades
-Consulta de Usuário no GitHub: Permite pesquisar um usuário no GitHub informando o seu nome de usuário.
+✨ Principais Funcionalidades:
 
-Exibição de Informações: Mostra informações formatadas como nome, login, bio, repositórios públicos e localização do usuário.
+🔍 Consulta de Usuário: Pesquise um usuário no GitHub informando seu nome de usuário.
 
-Verificação de Erros: Caso o usuário não exista ou ocorra algum erro na consulta, a ferramenta exibe mensagens apropriadas de erro.
+🖥 Exibição de Informações: Visualize as principais informações do usuário, como nome, login, bio, número de repositórios públicos e localização.
+
+⚠️ Verificação de Erros: Caso o usuário não seja encontrado ou ocorra algum erro, a ferramenta exibirá uma mensagem de erro clara.
+
+🌐 Integração com a API do GitHub: Utiliza a API pública do GitHub para buscar informações e exibir de forma estruturada.
 
 🛠 Tecnologias Utilizadas
-Java 11 ou superior: Linguagem principal para desenvolvimento da aplicação.
+Esse projeto foi construído com as seguintes tecnologias:
 
-API do GitHub: Utilizada para consultar informações sobre os usuários no GitHub.
+🧑‍💻 Java 11+: Linguagem principal para desenvolvimento.
 
-Gson: Biblioteca usada para converter a resposta JSON da API para objetos Java.
+🌍 API do GitHub: Para consulta de dados sobre usuários.
+
+📦 Gson: Para desserializar o JSON da resposta da API para objetos Java.
+
+🌐 HttpClient (Java 11): Para realizar as requisições HTTP à API.
 
 🔧 Como Rodar o Projeto
-Pré-requisitos
-Java 11 ou superior instalado na sua máquina.
+⚡️ Pré-requisitos
+Antes de rodar o projeto, certifique-se de ter o Java 11 ou superior instalado em sua máquina.
 
-Gson: Biblioteca para manipulação do JSON. O Maven ou Gradle pode ser utilizado para gerenciar dependências.
 
-Passos para Execução
+Baixe o Java aqui
+
+🏁 Passos para Execução
 Clone o repositório:
 
 bash
 Copiar
 Editar
-git clone https://github.com/teodoroooo/GitHubInspector.git
-Importe o projeto para sua IDE: Abra o projeto no IntelliJ IDEA, Eclipse ou qualquer outra IDE de sua preferência.
+git clone https://github.com/seu-usuario/GitHubInspector.git
+Importe o projeto na sua IDE: Abra o projeto em sua IDE favorita (IntelliJ IDEA, Eclipse, etc.).
 
 Adicione a dependência do Gson:
 
-Se estiver usando o Maven, adicione no seu pom.xml:
+Se estiver usando Maven, adicione a dependência do Gson no seu pom.xml:
 
 xml
 Copiar
@@ -42,29 +52,27 @@ Editar
     <artifactId>gson</artifactId>
     <version>2.8.8</version>
 </dependency>
-Ou, se usar o Gradle, adicione no seu build.gradle:
+Se estiver usando Gradle, adicione a dependência no seu build.gradle:
 
 gradle
 Copiar
 Editar
 implementation 'com.google.code.gson:gson:2.8.8'
-Execute o Programa:
+Execute o programa: Após configurar as dependências, execute o programa. O sistema pedirá para digitar o nome de usuário do GitHub:
 
-Ao rodar a aplicação, o sistema pedirá para digitar o nome de usuário do GitHub.
-
-O programa irá consultar as informações do usuário e exibir no console.
-
-Exemplo de Execução:
-
-Ao rodar o código, será solicitado o nome do usuário GitHub, por exemplo:
-
-arduino
+bash
 Copiar
 Editar
 Digite o nome do usuário do GitHub para consultar informações: 
-Se o usuário existir, as informações serão exibidas de forma formatada, como:
+O sistema retornará as informações do usuário no GitHub de forma formatada.
 
-makefile
+🖼 Exemplo de Execução
+📋 Exemplo de Saída:
+
+Caso o usuário seja encontrado, você verá:
+
+
+bash
 Copiar
 Editar
 Nome: Gabriel Souza
@@ -73,13 +81,15 @@ Bio: Desenvolvedor Backend | Java, Spring Boot
 Repositórios públicos: 10
 Localização: São Paulo, Brasil
 Perfil: https://github.com/gabrielsouza
-Caso o usuário não seja encontrado, será exibida a mensagem:
+Caso o usuário não seja encontrado, a mensagem será:
 
-perl
+bash
 Copiar
 Editar
-Usuário não encontrado no GitHub.
+🚨 **Usuário não encontrado no GitHub.**
 📂 Estrutura de Pastas
+A estrutura do projeto é a seguinte:
+
 bash
 Copiar
 Editar
@@ -88,30 +98,38 @@ GitHubInspector/
 │   └── br/
 │       └── com/
 │           └── githubinspector/
-│               └── ConsultaGitHub.java
-│               └── ErroConsultaGitHubException.java
+│               ├── ConsultaGitHub.java
+│               ├── ErroConsultaGitHubException.java
 │               └── UsuarioGitHub.java
-├── pom.xml
+├── pom.xml (caso esteja usando Maven)
+└── README.md
 ⚙️ Tratamento de Erros
-Erro de Consulta: Caso ocorra algum problema durante a consulta, será exibida a mensagem:
-Opss... Houve um erro durante a consulta à API do GitHub.
+A aplicação conta com tratamento de erros para cenários como:
 
-Usuário Não Encontrado: Caso o nome de usuário fornecido não exista, o sistema lança uma exceção personalizada e exibe a mensagem:
-Usuário não encontrado no GitHub.
+🛠 Erro de Consulta: Caso ocorra um erro durante a consulta à API, o sistema exibirá:
 
+bash
+Copiar
+Editar
+Opss... Houve um erro durante a consulta à API do GitHub. ❌
+🚫 Usuário Não Encontrado: Se o nome de usuário não for encontrado, será exibida a mensagem:
+
+bash
+Copiar
+Editar
+Usuário não encontrado no GitHub. 🙅‍♂️
 📝 Contribuindo
-Contribuições são bem-vindas! Se você deseja contribuir para o GitHubInspector, siga estas etapas:
+Este projeto é open-source e aceita contribuições! Se você deseja colaborar, siga estas etapas:
 
-Faça um fork do projeto.
+🍴 Faça um fork do repositório.
 
-Crie uma nova branch para a sua feature (git checkout -b feature/nova-feature).
+🌱 Crie uma nova branch para a sua feature (git checkout -b feature/nova-feature).
 
-Faça as modificações e commit (git commit -am 'Adicionando nova feature').
+💻 Faça as modificações necessárias e faça um commit com uma descrição clara do que foi alterado (git commit -am 'Adicionando nova feature').
 
-Faça o push para a branch criada (git push origin feature/nova-feature).
+🚀 Envie o seu push para a branch criada (git push origin feature/nova-feature).
 
-Abra um Pull Request para revisão.
+🔄 Abra um Pull Request para revisão e integração das alterações.
 
 📄 Licença
 Distribuído sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
